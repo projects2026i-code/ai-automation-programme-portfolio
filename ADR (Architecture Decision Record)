@@ -1,0 +1,31 @@
+# ADR-001: Workflow Automation Approach
+
+## Context
+Manual processes consuming 4.2 hours per job with 12 touch-points. Staff report 55% time wasted on manual work. Bottlenecks not visible.
+
+## Decision
+Implement low-code workflow automation platform with real-time dashboards and checkpoint-based (agile) execution, rather than:
+- Option A: Custom development (too slow, high cost)
+- Option B: Batch processing (no agility improvement)
+- Option C: Manual process redesign only (no leverage)
+
+## Rationale
+- **Speed:** Low-code platform deployable in weeks, not months
+- **Agility:** Checkpoint-based workflow enables real-time visibility & intervention
+- **Cost:** Predictable licensing vs. custom dev uncertainty
+- **Adoption:** Simpler UI → faster staff adoption
+- **Measurable:** Real-time dashboards surface bottlenecks immediately
+
+## Consequences
+- **Positive:** 31% cycle time reduction, 40% output gain, 23.2x ROI in 3 months
+- **Positive:** Peer champions model enabled 88% adoption (exceeded 70% target)
+- **Negative:** Vendor integration complexity underestimated (3-week delay)
+- **Negative:** Sustainability concerns emerged at scale (team workload trending high)
+
+## Alternatives Rejected
+1. **Pure custom development:** High cost (£250k+), long timeline (12 months), single vendor risk
+2. **Batch process optimization:** Would improve cycle time ~10%, not 31%
+3. **Manual redesign only:** No leverage; same manual touch-points, just faster
+
+## Status
+**ACCEPTED** — Platform live to 500 users, delivering committed benefits. Phase 3 expansion to 150+ users in progress.
