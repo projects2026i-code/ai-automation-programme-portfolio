@@ -118,3 +118,14 @@ Maps directly to the Trust & Controls threat model
 implementation of 3 of the 6 documented risk controls.
 
 **Programme Manager | Enterprise Transformation | AI-Assisted Automation | Process Design**
+**Event-driven processing:** claim events are submitted to an Azure
+Storage Queue (`claims-intake-queue`) rather than triggering the agent
+directly — a producer/consumer pattern that decouples submission from
+processing. The consumer polls the queue, runs each event through the
+full agent pipeline, and deletes the message once processed.
+
+**Production evolution:** this notebook polls manually; a production
+deployment would use an Azure Function with a Queue trigger to process
+events automatically as they arrive, removing the need for manual
+polling.
+
