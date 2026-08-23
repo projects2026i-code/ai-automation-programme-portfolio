@@ -87,6 +87,34 @@ This programme demonstrates the intersection of **enterprise transformation + AI
 - Measuring what matters (ROI, not just feature count)
 - Leading through complexity (vendor delays, scope changes, escalations)
 
----
+---## RAG + Agent Orchestration (agent_orchestration_build.ipynb)
+
+A working retrieval-augmented generation system with LangGraph agent
+orchestration, built on Azure OpenAI (gpt-5-mini).
+
+**Architecture:** guardrail → retrieve → grade → rewrite (if needed) → answer
+
+- **Preventative control:** guardrail node blocks unsafe/malicious queries
+  before retrieval
+- **Detective control:** retrieval grading scores relevance before
+  generating an answer
+- **Corrective control:** low-relevance retrieval triggers an automatic
+  query rewrite and retry (max 2 attempts)
+- **Grounding:** answers are generated only from retrieved document
+  context, with source citation; the system explicitly refuses to answer
+  when it lacks sufficient grounded information, rather than hallucinating
+
+**Data pipeline:** source documents were scanned PDFs with no text layer;
+built an OCR ingestion step (Tesseract) to extract text before chunking
+and retrieval — a common real-world RAG ingestion challenge.
+
+**Known limitation:** retrieval uses TF-IDF (keyword-based) rather than
+semantic embeddings, since no embedding model was deployed for this
+build. A production version would use Azure AI Search with vector
+embeddings for stronger semantic matching.
+
+Maps directly to the Trust & Controls threat model
+(`docs/trust-controls-threat-model.md`) — this notebook is a working
+implementation of 3 of the 6 documented risk controls.
 
 **Programme Manager | Enterprise Transformation | AI-Assisted Automation | Process Design**
