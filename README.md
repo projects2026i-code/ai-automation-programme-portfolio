@@ -1,6 +1,30 @@
 # Enterprise Workflow Automation Programme
 ## AI-Powered Operational Efficiency Transformation
 
+## Portfolio Overview — AI Solutions Architect
+
+This repository demonstrates hands-on architecture work mapped directly
+to an enterprise AI Solutions Architect role: GenAI/RAG architecture,
+agentic orchestration, AI Trust & Controls, governance frameworks,
+event-driven integration, and LLMOps/AgenticOps practices.
+
+| JD requirement | Artifact |
+|---|---|
+| RAG, agent-based architectures, orchestration frameworks | `agent_orchestration_build.ipynb` |
+| AI Trust & Controls layer (6 named risks) | `docs/trust-controls-threat-model.md` |
+| Governance frameworks (ISO/IEC 42001, NIST AI RMF, EU AI Act) | `docs/governance-framework-mapping.md` |
+| Messaging technologies, event-driven architecture | Queue producer/consumer pattern in `agent_orchestration_build.ipynb` |
+| LLMOps/AgenticOps: prompt lifecycle, evaluation, caching | `prompts/`, `evals/golden_eval_set.md`, `docs/caching-strategy.md` |
+| Azure-native AI | Built on Azure AI Foundry (gpt-5-mini deployment) |
+| Secure architecture patterns for structured/unstructured data | OCR ingestion pipeline (scanned PDF → text) in the notebook |
+
+**Known limitations, documented honestly:** TF-IDF retrieval rather
+than semantic embeddings (no embedding model deployed); manual queue
+polling rather than an Azure Function trigger. Both are noted in-repo
+as the natural next steps toward a production system — reflecting
+real architectural trade-off reasoning under time constraints, not
+oversight.
+
 ### Business Problem
 - Manual processes: 4.2-hour average cycle time per job
 - Output: 120 jobs/day with 12 manual touch-points per job
